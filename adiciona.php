@@ -7,20 +7,20 @@
     <body>
         <?php
 
-            $url = "http://localhost:8080/api/v1/produtos/adiciona";
-            $ch = curl_init($url);
-
             $data = http_build_query(array(
-                'titulo' => 'Mouse Logitech',
+                'titulo' => 'Mouse Newlink',
                 'descricao' => 'Mouse sem fio',
                 'preco' => 59.90,
-                'fabricante' => 'Logitech'
+                'fabricante' => 'Newlink'
             ));
 
             $header = array(
                 'X-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibm9tZSI6IkFuZHJlIE1vdXJhIiwiZW1haWwiOiJhbmRyZUB0ZXN0ZS5jb20iLCJzZW5oYSI6ImUxMGFkYzM5NDliYTU5YWJiZTU2ZTA1N2YyMGY4ODNlIiwiY3JlYXRlZF9hdCI6bnVsbCwidXBkYXRlZF9hdCI6bnVsbH0.vf-YePeikd6zZ7nt7uyOkFp-MjEnFte7OVBSoV-tupo'
             );
 
+            $url = "http://localhost:8080/api/v1/produtos/adiciona";
+
+            $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_HTTPHEADER, $header);

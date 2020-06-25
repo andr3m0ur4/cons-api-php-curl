@@ -8,6 +8,7 @@
         <?php
 
             $url = "http://localhost:8080/api/v1/produtos/lista";
+            
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -17,7 +18,8 @@
             //var_dump($resultado);
 
             foreach ($resultado as $produto) {
-                //var_dump($ator);
+                
+                echo "ID: " . $produto->id . "<br>";
                 echo "Titulo: " . $produto->titulo . "<br>";
                 echo "Descricao: " . $produto->descricao . "<br>";
                 echo "Preco: " . $produto->preco . "<br>";

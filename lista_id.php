@@ -7,11 +7,11 @@
     <body>
         <?php
 
-            $id = 2;
+            $id = 5;
 
             $url = "http://localhost:8080/api/v1/produtos/lista/{$id}";
-            $ch = curl_init($url);
 
+            $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_HTTPGET, true);
